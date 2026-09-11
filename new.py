@@ -8,7 +8,7 @@ st.title("Adsorption Capacity Prediction App")
 st.write("Enter values of variables for adsorption")
 
 n = st.number_input(
-    "What number of predictions do you wish to do?",
+    "What number of predictions do you wish to make?",
     min_value=1,
     step=1,
     value=1
@@ -20,22 +20,10 @@ for i in range(n):
 
     st.subheader(f"Prediction {i + 1}")
 
-    Batch = st.number_input(
-        "Batch:",
-        min_value=0.0,
-        key=f"Batch_{i}"
-    )
-
     Temperature = st.number_input(
         "Temperature:",
         min_value=0.0,
         key=f"Temperature_{i}"
-    )
-
-    Volume = st.number_input(
-        "Volume:",
-        min_value=0.0,
-        key=f"Volume_{i}"
     )
 
     pH = st.number_input(
@@ -64,9 +52,7 @@ for i in range(n):
     )
 
     inputs.append({
-        "Batch": Batch,
         "Temperature": Temperature,
-        "Volume": Volume,
         "pH": pH,
         "Time": Time,
         "Adsorbate Dose": Adsorbate_Dose,
@@ -83,5 +69,5 @@ if st.button("Predict"):
         prediction = model.predict(new_combo)
 
         st.success(
-            f"Prediction {i + 1}: {prediction[0]:.2f}"
+            f"Adsorption Capacity {i + 1}: {prediction[0]:.2f}"
         )
