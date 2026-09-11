@@ -42,7 +42,7 @@ The application can use experimental conditions including:
 adsorption-app/
 │
 ├── ad_app.py
-├── adsorption_model.pkl
+├── ad_model.pkl
 ├── requirements.txt
 └── README.md
 ```
