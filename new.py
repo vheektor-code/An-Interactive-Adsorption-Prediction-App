@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("ad_model.pkl")
+model = joblib.load("ads_model.pkl")
 
 st.title("Adsorption Capacity Prediction App")
 st.write("Enter values of variables for adsorption")
